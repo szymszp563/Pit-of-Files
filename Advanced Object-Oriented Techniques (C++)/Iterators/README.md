@@ -1,0 +1,1 @@
+Learning about iterators. The program finds words from the dictionary in the text. Then writes these words. Next rewrites the text with found type of word from dictionary.
