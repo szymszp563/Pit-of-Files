@@ -1,0 +1,1 @@
+Simple app that simulates roll of dices on android.
