@@ -1,0 +1,23 @@
+Dane Nadawcy:
+Imię: Eol
+Nazwisko: woij
+Ulica: wdm
+Numer Domu: 23
+Numer Lokalu: 
+Numer Telefonu: 24349932
+Adres Emial: ndj@inn
+
+Dane Odbiorcy:
+Imię: jknsc
+Nazwisko: sjkdn
+Ulica: dnjk
+Numer Domu: 33
+Numer Lokalu: 
+Numer Telefonu: 2432482
+Adres Emial: wndkj@nj
+
+Wymiary Paczki:
+Długość: 1
+Szerokość: 2
+Wysokość: 4
+Waga: 3
