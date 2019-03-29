@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RollOfDice</string>
+    <string name="max">MAX</string>
+    <string name="sum">SUM</string>
+    <string name="number_of_dices">Number of dices</string>
+    <string name="number_of_walls">Number of walls</string>
+    <string name="_1">1</string>
+    <string name="_4">4</string>
+</resources>

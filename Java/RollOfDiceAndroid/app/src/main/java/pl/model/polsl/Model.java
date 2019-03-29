@@ -1,0 +1,159 @@
+package pl.model.polsl;
+
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
+
+
+
+/**
+ * Model clss represensts an object and has logic of application.
+ *
+ * @author Szymon Szpakowski
+ * @version 2.1
+ */
+public class Model implements ModelGetInterface {
+
+    /**
+     * field represents numer of dices to throw
+     */
+    private Integer numOfDices;
+    /**
+     * field represents number of walls of each dice
+     */
+    private Integer numOfWalls;
+    /**
+     * field represents mode of logic
+     */
+    private String mode;
+    /**
+     * field represents result of logic
+     */
+    private Integer result = 0;
+    /**
+     * field represents safe collection, added in version 2.1
+     */
+    private List<Integer> generatedThrows = new LinkedList<>();
+
+    /**
+     * getter of number of dices
+     *
+     * @return number of dices
+     */
+    @Override
+    public Integer getNumOfDices() {
+        return numOfDices;
+    }
+
+    /**
+     * getter of number of walls
+     *
+     * @return number of walls
+     */
+    @Override
+    public Integer getNumOfWalls() {
+        return numOfWalls;
+    }
+
+    /**
+     * getter of mode
+     *
+     * @return mode
+     */
+    @Override
+    public String getMode() {
+        return mode;
+    }
+
+    /**
+     * getter of result
+     *
+     * @return result
+     */
+    @Override
+    public Integer getResult() {
+        return result;
+    }
+
+    /**
+     * setter of number of dices
+     *
+     * @param numOfDices number of dices
+     */
+    public void setNumOfDices(Integer numOfDices) {
+        this.numOfDices = numOfDices;
+    }
+
+    /**
+     * setter of number of walls
+     *
+     * @param numOfWalls number of walls
+     */
+    public void setNumOfWalls(Integer numOfWalls) {
+        this.numOfWalls = numOfWalls;
+    }
+
+    /**
+     * setter of mode
+     *
+     * @param mode mode of logic
+     */
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    /**
+     * logic of model, depending on mode sets result as sum of throw dices or
+     * maximum of thrown dices.
+     */
+    public void throwDices(){
+        /**
+         * generator of random numbers(in this case integer numbers >1)
+         */
+        Random generator = new Random();
+        /**
+         * mode of logic
+         */
+        String modeOfRun = this.getMode();
+        generatedThrows.clear();
+        result = 0;
+        for (int i = 0; i < this.getNumOfDices(); i++) {
+            generatedThrows.add((generator.nextInt(this.getNumOfWalls()) + 1));
+        }
+        if (modeOfRun.equals("sum")) {
+            //result += (generator.nextInt(this.getNumOfWalls()) + 1);
+            for (Integer number : generatedThrows) {
+                result += number;
+            }
+        } else if (modeOfRun.equals("max")) {
+            for (int i = 0; i < this.getNumOfDices(); i++) {
+                int buff = (generator.nextInt(this.getNumOfWalls()) + 1);
+                if (this.result < buff) {
+                    this.result = buff;
+                }
+            }
+        }
+
+
+        }
+    }
+
+
+
+/**
+ * added in version 2.1 to show usage of standard annotations
+ *
+ */
+interface ModelGetInterface {
+
+    public Integer getNumOfDices();
+
+    public Integer getNumOfWalls();
+
+    public String getMode();
+
+    public Integer getResult();
+}
+
+
