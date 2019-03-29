@@ -1,0 +1,1 @@
+Learning usage of exceptions. 

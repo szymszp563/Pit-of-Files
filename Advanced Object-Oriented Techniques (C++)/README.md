@@ -1,0 +1,1 @@
+Learning advanced object techniques. Examples are in C++,  but their usage in any object-oriented language is very similar
