@@ -1,1 +1,1 @@
-Tutaj umieszczać zajęcia laboratoryjne nr 3
+Learning patterns
