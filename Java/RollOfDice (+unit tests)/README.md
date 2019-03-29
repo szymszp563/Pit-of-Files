@@ -1,0 +1,1 @@
+MVC app simulates roll of dices. In this version added unit tests.
