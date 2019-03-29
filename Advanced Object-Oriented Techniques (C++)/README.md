@@ -1,1 +1,1 @@
-Learning advanced object techniques. Examples are in C++,  but their usage in any object-oriented language is very similar
+Learning advanced object techniques. Examples are in C++,  but their usage in any object-oriented language is very similar. Projects perform simple algorithms like determination of the pesel number (in STL),  finding words from dictionary in text (in iterators), or designate calories of soda (in exceptions) etc..
