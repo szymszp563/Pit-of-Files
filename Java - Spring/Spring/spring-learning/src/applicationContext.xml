@@ -9,12 +9,22 @@
 
 	
     <!-- Define your beans here -->
+    
+    <!-- define the dependency -->
     <bean 
-    id="myCoach"
-    class ="org.learning.spring.GymCoach">
+    	id="myFortune"
+    	class="org.learning.spring.HappyFortuneService">
+    </bean>
+    
+    <bean 
+    	id="myCoach"
+    	class ="org.learning.spring.GymCoach">
+    
+    	<!--  set up constructor injection -->
+    	<constructor-arg ref="myFortune"/>
     
     </bean>
-    <!-- define the dependency -->
+    
   
 
 </beans>
