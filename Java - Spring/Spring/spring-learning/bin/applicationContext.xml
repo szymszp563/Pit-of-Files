@@ -25,6 +25,13 @@
     
     </bean>
     
+    <bean id="myCricketCoach"
+    	class="org.learning.spring.CricketCoach">
+    	
+    	<!--  set up setter injection -->
+    	<property name="fortuneService" ref="myFortune"/>
+    	
+    </bean>
   
 
 </beans>
