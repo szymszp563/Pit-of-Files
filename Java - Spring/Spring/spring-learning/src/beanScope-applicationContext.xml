@@ -18,20 +18,14 @@
     
     <bean 
     	id="myCoach"
-    	class ="org.learning.spring.GymCoach">
+    	class ="org.learning.spring.GymCoach"
+    	scope="prototype">
     
     	<!--  set up constructor injection -->
     	<constructor-arg ref="myFortune"/>
     
     </bean>
-    
-    <bean id="myCricketCoach"
-    	class="org.learning.spring.CricketCoach">
-    	
-    	<!--  set up setter injection -->
-    	<property name="fortuneService" ref="myFortune"/>
-    	
-    </bean>
+
   
 
 </beans>

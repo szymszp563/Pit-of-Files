@@ -6,13 +6,12 @@ public class CricketCoach implements Coach {
 	// add new fields for email and team
 	private String emailAddress;
 	private String team;
-	
+
 	// create a no-arg constructor
 	public CricketCoach() {
 		System.out.println("CricketCoach: inside no-arg constructor");
-	}	
-	
-	
+	}
+
 	// getter methods
 	public String getEmailAddress() {
 		return emailAddress;
@@ -21,12 +20,12 @@ public class CricketCoach implements Coach {
 	public String getTeam() {
 		return team;
 	}
-	
+
 	// setter methods
-		public void setFortuneService(FortuneService fortuneService) {
-			System.out.println("CricketCoach: inside setter method - setFotuneService");
-			this.fortuneService = fortuneService;
-		}
+	public void setFortuneService(FortuneService fortuneService) {
+		System.out.println("CricketCoach: inside setter method - setFotuneService");
+		this.fortuneService = fortuneService;
+	}
 
 	public void setEmailAddress(String emailAddress) {
 		System.out.println("CricketCoach: inside setter method - setEmailAddress");

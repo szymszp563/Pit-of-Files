@@ -18,8 +18,9 @@
     
     <bean 
     	id="myCoach"
-    	class ="org.learning.spring.GymCoach"
-    	scope="prototype">
+    	class ="org.learning.spring.TrackCoach"
+    	init-method="doMyStartupStuff"
+    	destroy-method="doMyCleanupStuff">
     
     	<!--  set up constructor injection -->
     	<constructor-arg ref="myFortune"/>
