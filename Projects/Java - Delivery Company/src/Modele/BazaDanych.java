@@ -12,7 +12,7 @@ import java.sql.Statement;
 
 /**
  *
- * @author Patryk
+ * @author Szymon
  */
 public class BazaDanych {
 

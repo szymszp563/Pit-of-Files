@@ -1,0 +1,23 @@
+Dane Nadawcy:
+Imię: Szymon
+Nazwisko: Szpakowski-Żuk
+Ulica: ---
+Numer Domu: 67
+Numer Lokalu: 67
+Numer Telefonu: 767
+Adres Emial: szy@gmial.com
+
+Dane Odbiorcy:
+Imię: DAW
+Nazwisko: dsgdg-----jhg
+Ulica: hjfgj
+Numer Domu: 56
+Numer Lokalu: 65
+Numer Telefonu: 656
+Adres Emial: zszy@gmial.com
+
+Wymiary Paczki:
+Długość: 200
+Szerokość: 200
+Wysokość: 100
+Waga: 50

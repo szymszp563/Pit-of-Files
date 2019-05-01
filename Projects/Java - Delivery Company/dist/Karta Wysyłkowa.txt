@@ -1,0 +1,23 @@
+Dane Nadawcy:
+Imię: hfd
+Nazwisko: fdgfg
+Ulica: gsdgs
+Numer Domu: 43
+Numer Lokalu: 34
+Numer Telefonu: 3434
+Adres Emial: szymo@gmail.cmo
+
+Dane Odbiorcy:
+Imię: gsdg
+Nazwisko: gsdg
+Ulica: sdg
+Numer Domu: 43534553
+Numer Lokalu: 543
+Numer Telefonu: 543534
+Adres Emial: s3zymo@gmail.cmo
+
+Wymiary Paczki:
+Długość: 100
+Szerokość: 23
+Wysokość: 12
+Waga: 34

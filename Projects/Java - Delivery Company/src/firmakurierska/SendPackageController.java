@@ -13,7 +13,7 @@ import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
- * @author Michal
+ * @author Szymon
  */
 
 public class SendPackageController {
@@ -117,16 +117,16 @@ public class SendPackageController {
      */
     public static boolean isInteger(String s, int radix) {
         if (s.isEmpty()) {
-            return true;//false
+            return false;
         }
         for (int i = 0; i < s.length(); i++) {
-            if (i == 0 && s.charAt(i) == '-') {
+            /*if (i == 0 && s.charAt(i) == '-') {
                 if (s.length() == 1) {
                     return false;
                 } else {
                     continue;
                 }
-            }
+            }*/
             if (Character.digit(s.charAt(i), radix) < 0) {
                 return false;
             }
@@ -142,7 +142,6 @@ public class SendPackageController {
     
     @FXML
     private void generateAndSend(){
-        //baw się osobo która to robi XD
         SendPackage sendPackage = new SendPackage();
         int ID = allControllers.getSignInController().getUserID();
         
@@ -165,50 +164,50 @@ public class SendPackageController {
         incorrectHeigth.setText("");
         incorrectWeigth.setText("");
         
-        if(sName.getText().length()>50 || sName.getText().length()<1)
+        if(!sName.getText().matches("[\\p{Lu}\\p{Ll}]{1,50}"))
             incorrectNameN.setText("BŁĘDNE IMIĘ");
-        else if(sSurname.getText().length()>50 || sSurname.getText().length()<1)
+        else if(!sSurname.getText().matches("[\\p{Lu}\\p{Ll}-]{1,50}"))
             incorrectSurNameN.setText("BŁĘDNE NAZWISKO");
-        else if(sStreet.getText().length()>50 || sStreet.getText().length()<1)
+        else if(!sStreet.getText().matches("[\\p{Lu}\\p{Ll}-]{1,50}"))
             incorrectStreetN.setText("BŁĘDNA ULICA");
-        else if(!isInteger(sHouseNumber.getText()) || sHouseNumber.getText().length()<1)
+        else if(!isInteger(sHouseNumber.getText()))
             incorrectHomeN.setText("BŁĘDNY NUMER DOMU");
-        else if(!isInteger(sLocalNumber.getText()))
+        else if(!isInteger(sLocalNumber.getText())&&sLocalNumber.getText().length()>0)
             incorrectLocalN.setText("BŁĘDNY NR LOKALU");
         else if(!isInteger(sPhoneNumber.getText()) || sPhoneNumber.getText().length()<3)
             incorrectPhoneN.setText("BŁĘDNY NR TEL");
-        else if(!sEmail.getText().contains("@") && !sEmail.getText().contains("."))
+        else if(!sEmail.getText().matches("\\w+@\\w+\\.\\w{1,3}")||sEmail.getText().length()>50)
             incorrectEmailN.setText("BŁĘDNY EMAIL");
-        else if(rName.getText().length()>50 || rName.getText().length()<1)
+        else if(!rName.getText().matches("[\\p{Lu}\\p{Ll}]{1,50}"))
             incorrectNameO.setText("BŁĘDNE IMIĘ");
-        else if(rSurname.getText().length()>50 || rSurname.getText().length()<1)
+        else if(!rSurname.getText().matches("[\\p{Lu}\\p{Ll}][\\p{Lu}\\p{Ll}-]{1,48}[\\p{Lu}\\p{Ll}]"))
             incorrectSurNameO.setText("BŁĘDNE NAZWISKO");
-        else if(rStreet.getText().length()>50 || rStreet.getText().length()<1)
+        else if(!rStreet.getText().matches("[\\p{Lu}\\p{Ll}-]{1,50}"))
             incorrectStreetO.setText("BŁĘDNA ULICA");
         else if(!isInteger(rHouseNumber.getText()) || rHouseNumber.getText().length()<1)
             incorrectHomeO.setText("BŁĘDNY NUMER DOMU");
-        else if(!isInteger(rLocalNumber.getText()))
+        else if(!isInteger(rLocalNumber.getText())&&sLocalNumber.getText().length()>0)
             incorrectLocalO.setText("BŁĘDNY NR LOKALU");
         else if(!isInteger(rPhoneNumber.getText()) || rPhoneNumber.getText().length()<3)
             incorrectPhoneO.setText("BŁĘDNY NR TEL");
-        else if(!rEmail.getText().contains("@") && !rEmail.getText().contains("."))
+        else if(!rEmail.getText().matches("\\w+@\\w+\\.\\w{1,3}")||sEmail.getText().length()>50)
             incorrectEmailO.setText("BŁĘDNY EMAIL");
         else if(!isInteger(length.getText()) || length.getText().length()<1)
             incorrectLength.setText("BŁĘDNA DŁUGOŚĆ");
         else if(isInteger(length.getText()) && Integer.parseInt(length.getText())>200)
-            incorrectLength.setText("BŁĘDNA DŁUGOŚĆ");
+            incorrectLength.setText("PACZKA ZBYT DŁUGA (max 200cm)");
         else if(!isInteger(width.getText()) || width.getText().length()<1)
             incorrectWidth.setText("BŁĘDNA SZEROKOŚĆ");
         else if(isInteger(width.getText()) && Integer.parseInt(width.getText())>200)
-            incorrectWidth.setText("BŁĘDNA SZEROKOŚĆ");
+            incorrectWidth.setText("PACZKA ZBYT SZEROKA (max 200cm)");
         else if(!isInteger(height.getText()) || height.getText().length()<1)
             incorrectHeigth.setText("BŁĘDNA WYSOKOŚĆ");
         else if(isInteger(height.getText()) && Integer.parseInt(height.getText())>100)
-            incorrectHeigth.setText("BŁĘDNA WYSOKOŚĆ");
+            incorrectHeigth.setText("PACZKA ZBYT WYSOKA (max 100cm)");
         else if(!isInteger(weight.getText()) || weight.getText().length()<1)
             incorrectWeigth.setText("BŁĘDNY CIĘŻAR");
         else if(isInteger(weight.getText()) && Integer.parseInt(weight.getText())>50)
-            incorrectWeigth.setText("BŁĘDNY CIĘŻAR");
+            incorrectWeigth.setText("PACZKA ZBYT CIĘŻKA (max 50kg)");
         else{
             sendPackage.addPackageToDatabase(sName.getText(), sSurname.getText(), sStreet.getText(), sHouseNumber.getText(), sLocalNumber.getText(), sPhoneNumber.getText(), sEmail.getText(),
                     rName.getText(), rSurname.getText(), rStreet.getText(), rHouseNumber.getText(), rLocalNumber.getText(), rPhoneNumber.getText(), rEmail.getText(),

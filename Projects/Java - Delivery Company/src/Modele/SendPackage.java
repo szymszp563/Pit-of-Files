@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author oem
+ * @author Szymon
  */
 public class SendPackage {
 
